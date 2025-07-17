@@ -1,10 +1,11 @@
 import os
 import shutil
 from generate_page import generate_page_recursive
-def main():
+build_location = "docs"
+def main(basepath = "/"):
     print("Copying...")
-    copy_static("static", "public")
-    generate_page_recursive("content", "template.html", "public")
+    copy_static("static", build_location)
+    generate_page_recursive(f"content", "template.html", build_location, basepath)
 
 source_cleaned = False
 def copy_static(source, destination):
