@@ -1,1 +1,1 @@
-# static-site-generator
+boot.dev learning project
