@@ -1,8 +1,14 @@
+import sys
 import os
 import shutil
 from generate_page import generate_page_recursive
 build_location = "docs"
-def main(basepath = "/"):
+def main():
+    if sys.argv[1]:
+        basepath = sys.argv[1]
+    else:
+        basepath = "/"
+    print(f"basepath = {basepath}")
     print("Copying...")
     copy_static("static", build_location)
     generate_page_recursive(f"content", "template.html", build_location, basepath)
