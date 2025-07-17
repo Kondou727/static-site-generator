@@ -1,8 +1,10 @@
 import os
 import shutil
+from generate_page import generate_page_recursive
 def main():
     print("Copying...")
     copy_static("static", "public")
+    generate_page_recursive("content", "template.html", "public")
 
 source_cleaned = False
 def copy_static(source, destination):
