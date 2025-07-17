@@ -4,7 +4,7 @@ import shutil
 from generate_page import generate_page_recursive
 build_location = "docs"
 def main():
-    if sys.argv[1]:
+    if len(sys.argv) > 1:
         basepath = sys.argv[1]
     else:
         basepath = "/"
